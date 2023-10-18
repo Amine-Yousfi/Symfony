@@ -23,14 +23,14 @@ class AuthorController extends AbstractController
     }
     #[Route('/showAuthor/{name}', name: 'app_showAuthor')]
 
-    public function showAuthor ($name)
+    public function showAuthor ($name):Response
     {
         return $this->render('author/show.html.twig',['n'=>$name]);
 
     }
     #[Route('/showlist', name: 'app_showlist')]
 
-    public function list()
+    public function list():Response
     {$authors = array(
         array('id' => 1, 'picture' => '/images/Victor-Hugo.jpg','username' => 'Victor Hugo', 'email' =>
             'victor.hugo@gmail.com ', 'nb_books' => 100),
